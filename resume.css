@@ -1,0 +1,191 @@
+body {
+  margin: 0px;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 38px;
+  grid-template-columns: 1fr; 
+}
+.left-s{
+ display: flex;
+}
+.navigation > .left-s > div {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  height: 22px;
+  transition: border-bottom 0.5s;
+  color: #d32020;
+  text-decoration: none;
+  transition: color 0.5s;
+  text-decoration: none;
+  display: block;
+}
+.dropbtn {
+  background-color: white;
+  color: #7e7675;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  height: 22px;
+  transition: border-bottom 0.5s;
+}
+.dropbtn:hover{
+  padding-bottom: 22px;
+  border-bottom: 5px solid rgb(218, 16, 16);
+  transition: color 0.5s;
+  color: rgb(0, 0, 0);
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:  #fdf4f4;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content:hover {
+  border-bottom: 1px solid black;
+}
+.dropdown-content a{
+  color: #4e4242;
+  text-decoration: none;
+  transition: color 0.5s;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  color: black;
+}
+.show {display:block;}
+
+.about{
+  text-decoration: none;
+  color: #7e7675;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  height: 22px;
+  transition: border-bottom 0.5s;
+
+}
+
+.about a{
+  text-decoration: none;
+  transition: color 0.5s;
+}
+.about:hover a{
+  padding-bottom: 8px;
+  border-bottom: 5px solid rgb(218, 16, 16);
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-align: center;
+    
+}
+#img1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 300px;
+    background-size: 50% 50%;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+  .resume{
+    border-radius: 5px;
+  }
+
+  
+  #header {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  #title {
+    margin-left: 3%;
+  }
+  
+  
+  .left {
+    height: 1000px;
+    width: 45px;
+    
+    float: left;
+    position: fixed;
+  }
+  
+  .right {
+    height: 1000px;
+    width: 45px;
+    float: right;
+    position: inherit;
+  }
+  
+  .stuff {
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 55px;
+    width: 75%;
+    height: 1000px;
+  }
+  
+  p,
+  li {
+    font-family: 'IM Fell French Canon SC', serif;
+    font-size: 20px;
+    padding-bottom: 8px;
+    
+  }
+  
+  .head {
+    font-size: 38px;
+  }
+  
+  #name {
+    font-family: Sacramento;
+    float: right;
+    margin-top: 10px;
+    margin-right: 4%;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  @media only screen and (max-width: 430px) {
+    .left,
+    .right {
+      display: none;
+    }
+    .stuff {
+      width: 100%;
+      margin-left: 10px;
+    }
+  }
+  .footer {
+    height: 40px;  
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-align: center;
+    
+  }  

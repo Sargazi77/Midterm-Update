@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="uft-8"/>
+    <title> Rainfall sample</title>
+    <link rel="stylesheet" href="codes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head> 
+<style>
+    body {
+    margin: 0px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+    grid-template-columns: 1fr; 
+}
+.left-s{
+   display: flex;
+}
+.navigation > .left-s > div {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    transition: border-bottom 0.5s;
+    color: #d32020;
+    text-decoration: none;
+    transition: color 0.5s;
+    text-decoration: none;
+    display: block;
+}
+.dropbtn {
+    background-color: white;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+  }
+  .dropbtn:hover{
+    padding-bottom: 22px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+    transition: color 0.5s;
+    color: rgb(0, 0, 0);
+  }
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #fdf4f4;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+ }
+ .dropdown-content:hover {
+    border-bottom: 1px solid black;
+ }
+ .dropdown-content a{
+    color: #4e4242;
+    text-decoration: none;
+    transition: color 0.5s;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+ }
+ .dropdown-content a:hover {
+    color: black;
+ }
+ .show {display:block;}
+ 
+.about{
+    text-decoration: none;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+
+}
+
+.about a{
+    text-decoration: none;
+    transition: color 0.5s;
+}
+.about:hover a{
+    padding-bottom: 8px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+}
+textarea {
+    background-color: rgb(122, 122, 124);
+    font-size: 25px;
+}
+#demotext {
+color: #FFFFFF;
+background: #333333;
+text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+color: rgb(71, 69, 69);
+background: #ffffff;
+text-align: center
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-align: center;
+    
+}
+</style>
+<body>
+    <div class="starcture">
+        <div class="navigation">
+            <div class="left-s">
+                <div class="dropdown">
+                    <button onclick="CFunction()" class="dropbtn"> HOME </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="index.html"> HOME</a>
+                        <a href="codes.html"> My Codes</a>
+                        <a href="game-list.html"> My Games</a>
+                        <a href="resume.html"> My Resume</a>
+                    </div> 
+                </div>
+                <div class="about">
+                    <a href="about.html">About</a>
+                </div>
+
+
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div Class="name">MOHAMMAD SARGAZI</div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <div id="demotext"><h2> Rainfall Sample </h2></div>
+    <textarea id="w3mission" rows="20" cols="70">
+    num_years = int(input('How many years are in your rainfall sample? '))  # validation needed
+    multiyear_total = 0  # used for challenge level - initialize 2 study-wide variables
+     multiyear_avg = 0  # 2nd study-wide variable
+    for year in range(num_years): # outer loop starts - runs 1x for each year
+        total_rain_year = 0  # initialize year-level variables
+        avg_rain_year = 0.00
+        print(f'Rainfall info for year #{year + 1}: ')
+        for month in range(12):  # inner loop starts - runs 1x for each month (per year)
+            rain_for_month = float(input(f'\tEnter rain for month #{month + 1}: '))  # to validate, use ints
+            total_rain_year += rain_for_month  # accumulate each month's rain into yearly total
+        avg_rain_year = total_rain_year/12  # back to outer loop - avg. is for the year
+        print(f'Total rain in inches for year #{year + 1} = {total_rain_year}')
+        print(f'Year #{year + 1} Monthly Avg Rainfall = {avg_rain_year :<.2f}')
+        multiyear_total += total_rain_year  # this accumulates each year's rain into a study total
+    multiyear_avg = multiyear_total / num_years / 12  # calc. study avg.
+    print(f'\nTotal rain, all years = {multiyear_total} inches')  # display study-level data
+    print(f'Average monthly rain, all years = {multiyear_avg} inches')
+    print('Thanks for using the program!')  # exit msg.
+        
+         </textarea>
+        </div>
+</body> 
+<footer>
+    <div class="footer">
+    <p> Midterm Project Spring 2020</p>
+    </div>
+</footer>
+<script>
+    function CFunction(){ // when clicks toggle between showing and hiding the dropdown
+       document.getElementById("myDropdown").classList.toggle("show");
+
+    }
+    // close the drop down when user clicks outside the box
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        let droping = document.getElementsByClassName("dropdown-content");
+        let i;
+        for(i =0; i<droping.length;i++) {
+            let opendrop = droping[i];
+            if (opendrop.classList.contains('show')) {
+                opendrop.classList.remove('show');
+            }
+        }
+    }
+}  
+</script>
+</html>        

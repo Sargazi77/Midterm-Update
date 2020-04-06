@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="uft-8"/>
+    <title> Dictonary file</title>
+    <link rel="stylesheet" href="codes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head> 
+<style>
+body {
+    margin: 0px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+    grid-template-columns: 1fr; 
+}
+.left-s{
+   display: flex;
+}
+.navigation > .left-s > div {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    transition: border-bottom 0.5s;
+    color: #d32020;
+    text-decoration: none;
+    transition: color 0.5s;
+    text-decoration: none;
+    display: block;
+}
+.dropbtn {
+    background-color: white;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+  }
+  .dropbtn:hover{
+    padding-bottom: 22px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+    transition: color 0.5s;
+    color: rgb(0, 0, 0);
+  }
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #fdf4f4;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+ }
+ .dropdown-content:hover {
+    border-bottom: 1px solid black;
+ }
+ .dropdown-content a{
+    color: #4e4242;
+    text-decoration: none;
+    transition: color 0.5s;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+ }
+ .dropdown-content a:hover {
+    color: black;
+ }
+ .show {display:block;}
+ 
+.about{
+    text-decoration: none;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+
+}
+
+.about a{
+    text-decoration: none;
+    transition: color 0.5s;
+}
+.about:hover a{
+    padding-bottom: 8px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+}
+textarea {
+    background-color: rgb(122, 122, 124);
+    font-size: 25px;
+}
+#demotext {
+color: #FFFFFF;
+background: #333333;
+text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+color: rgb(71, 69, 69);
+background: #ffffff;
+text-align: center
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-align: center;
+    
+}
+</style>
+<body>
+    <div class="starcture">
+        <div class="navigation">
+            <div class="left-s">
+                <div class="dropdown">
+                    <button onclick="CFunction()" class="dropbtn"> HOME </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="index.html"> HOME</a>
+                        <a href="codes.html"> My Codes</a>
+                        <a href="game-list.html"> My Games</a>
+                        <a href="resume.html"> My Resume</a>
+                    </div> 
+                </div>
+                <div class="about">
+                    <a href="about.html">About</a>
+                </div>
+
+
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div Class="name">MOHAMMAD SARGAZI</div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <div id="demotext"><h2> Usernames Dictionary </h2></div>
+    <textarea id="w3mission" rows="20" cols="70">
+        def main():
+        try:
+            import os
+            if os.path.isfile('email_list.txt') is False:  # turn off line if you DON'T want to keep file between runs
+                list_file = open('email_list.txt', 'w')  # 'w' for write
+                list_file.write('Username and email list\n')  # initialize a txt file
+                list_file.close()
+            usernames = {'da453': 'da453@yahoo.com', 'ght3454': 'ght3454@hotmail.com', 'fgrtt33': 'fgrtt33@gmail.com'}
+            display_menu()
+            while True:
+                command = input('Command: ')
+                command = command.lower()
+                if command == 'view':
+                    view()
+                elif command == 'add':
+                    add()
+                elif command == 'exit':
+                    print('Bye!')
+                    break
+                else:
+                    print('Not a valid command. Please try again. \n')
+        except KeyError:
+            print('Key Error ')
+    
+    
+    def display_menu():
+        print('COMMAND MENU')
+        print('view - View Username list')
+        print('add - Add a Username')
+        print('exit - Exit program')
+        print()
+    
+    
+    def view():
+        my_file = open('email_list.txt', 'r')  # r is for read mode
+        my_data = my_file.read()  # read the entire file into one string
+        print(my_data)
+        my_file.close()  # close the file
+    
+    
+    def add():
+        user_input = input('Enter usernames with emails , separating each one with a comma. ')
+        while user_input == '' or '@' not in user_input:
+            user_input = input('Please enter a valid username and email.')
+        user_input_list = user_input.split(',')
+    
+    
+        user_input_fixed = ''  # a new string to hold the fixed items, so they can be written to the file
+        list_file = open('email_list.txt', 'a')  # 'a' for append mode
+        for i in range(len(user_input_list)):
+            guest_fixed = user_input_list[i].strip()
+            user_input_fixed = 'User ' + str(i + 1) + ' - ' + guest_fixed + '\n'
+            list_file.write(user_input_fixed)
+        list_file.close()
+    
+    
+    if __name__ == '__main__':
+        main()
+    
+    
+    
+        
+        </textarea>
+    </div>
+</body> 
+<footer>
+    <div class="footer">
+    <p> Midterm Project Spring 2020</p>
+    </div>
+</footer>
+<script>
+     function CFunction(){ // when clicks toggle between showing and hiding the dropdown
+       document.getElementById("myDropdown").classList.toggle("show");
+
+    }
+    // close the drop down when user clicks outside the box
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        let droping = document.getElementsByClassName("dropdown-content");
+        let i;
+        for(i =0; i<droping.length;i++) {
+            let opendrop = droping[i];
+            if (opendrop.classList.contains('show')) {
+                opendrop.classList.remove('show');
+            }
+        }
+    }
+}  
+</script>
+</html>   

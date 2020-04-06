@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="uft-8"/>
+    <title>P - Home </title>
+    <link rel="stylesheet" href="newindex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head> 
+<body>
+    <div class="starcture">
+        <div class="navigation">
+            <div class="left-s">
+                <div class="dropdown">
+                    <button onclick="CFunction()" class="dropbtn"> HOME </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="codes.html"> My Codes</a>
+                        <a href="game-list.html"> My Games</a>
+                        <a href="resume.html"> My Resume</a>
+                    </div> 
+                </div>
+                <div class="about">
+                    <a href="about.html">About</a>
+                </div>
+
+
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div Class="name">MOHAMMAD SARGAZI</div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="portfolio-items-wrapper">
+
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-img-background" style="background-image:url(images/1.jpg)"></div>
+                <div class="img-text-wrapper">
+                    <div class="logo-wrapper">
+                        <img src="images/logos/1.png">
+
+                    </div>
+                    <div class="subtitle"><a href="codes.html"> My Codes </a>
+                        
+                    </div>
+                </div>
+
+            </div>        
+
+        
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-img-background" style="background-image:url(images/2.jpg)"></div>
+                <div class="img-text-wrapper">
+                    <div class="logo-wrapper">
+                        <img src="images/logos/11.png">
+                    </div>
+                    <div class="subtitle"> <a href="game-list.html"> My Games </a>
+                        
+                    </div>
+            
+                </div>
+            </div>    
+
+        
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-img-background" style="background-image:url(images/3.jpg)"></div>
+                <div class="img-text-wrapper">
+                    <div class="logo-wrapper">
+                        <img src="images/logos/9.png">
+
+                    </div>
+                    <div class="subtitle"><a href="resume.html"> Resume </a>
+                        
+                    </div>
+                </div>
+            </div>    
+
+        
+        
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-img-background" style="background-image:url(images/4.jpg)"></div>
+                <div class="img-text-wrapper">
+                    <div class="logo-wrapper">
+                        <img src="images/logos/3.png">
+
+                    </div>
+                    <div class="subtitle"><a href="https://www.esquire.com/uk/design/g22798845/gadgets-for-men/"> New Gadgets in market </a>
+                        
+                    </div>
+                </div>
+            </div>    
+
+        
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-img-background" style="background-image:url(images/Image2.jpg)"></div>
+                <div class="img-text-wrapper">
+                    <div class="logo-wrapper">
+                        <img src="images/logos/10.png">
+
+                    </div>
+                    <div class="subtitle"><a href="email.html"> Contact me </a>
+                        
+                    </div>
+                </div>
+            </div>
+                
+            <div class="portfolio-item-wrapper">
+                <div class="portfolio-img-background" style="background-image:url(images/Image5.jpg)"></div>
+                <div class="img-text-wrapper">
+                    <div class="logo-wrapper">
+                        <img src="images/logos/2.png">
+
+                    </div>
+                    <div class="subtitle"><a href="https://www.indeed.com/jobs?q=IT&l=Minneapolis%2C+MN"> IT jobs </a>
+                        
+                    </div>
+                </div>
+            </div>     
+               
+        </div>        
+
+    </div> 
+
+</div>    
+  
+</body>
+<footer>
+    <div class="footer">
+    <p> Midterm Project Spring 2020</p>
+    </div>
+<script>
+    function CFunction(){ // when clicks toggle between showing and hiding the dropdown
+       document.getElementById("myDropdown").classList.toggle("show");
+
+    }
+    // close the drop down when user clicks outside the box
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        let droping = document.getElementsByClassName("dropdown-content");
+        let i;
+        for(i =0; i<droping.length;i++) {
+            let opendrop = droping[i];
+            if (opendrop.classList.contains('show')) {
+                opendrop.classList.remove('show');
+            }
+        }
+    }
+}  
+let portfolioitems = document.querySelectorAll('.portfolio-item-wrapper')
+
+portfolioitems.forEach(portfolioitem => {
+    portfolioitem.addEventListener('mouseover', () => {
+        portfolioitem.childNodes[1].classList.add('img-darken')
+    })
+    portfolioitem.addEventListener('mouseout', () => {
+        portfolioitem.childNodes[1].classList.remove('img-darken')
+    })
+
+})
+
+</script>  
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="uft-8"/>
+    <title>Game List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">    
+<style>
+body {
+    margin: 0px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+    grid-template-columns: 1fr; 
+}
+.left-s{
+   display: flex;
+}
+.navigation > .left-s > div {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    transition: border-bottom 0.5s;
+    color: #d32020;
+    text-decoration: none;
+    transition: color 0.5s;
+    text-decoration: none;
+    display: block;
+}
+.dropbtn {
+    background-color: white;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+  }
+  .dropbtn:hover{
+    padding-bottom: 22px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+    transition: color 0.5s;
+    color: rgb(0, 0, 0);
+  }
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #fdf4f4;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+ }
+ .dropdown-content:hover {
+    border-bottom: 1px solid black;
+ }
+ .dropdown-content a{
+    color: #4e4242;
+    text-decoration: none;
+    transition: color 0.5s;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+ }
+ .dropdown-content a:hover {
+    color: black;
+ }
+ .show {display:block;}
+ 
+.about{
+    text-decoration: none;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+
+}
+
+.about a{
+    text-decoration: none;
+    transition: color 0.5s;
+}
+.about:hover a{
+    padding-bottom: 8px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+}
+
+#demotext {
+color: #FFFFFF;
+background: #333333;
+text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+color: rgb(71, 69, 69);
+background: #ffffff;
+text-align: center
+}
+h2 {
+    font-size: 42px;
+}
+p {
+    text-decoration: none;
+    text-shadow: 0 0 3px rgb(185, 177, 63);
+    text-align: center;
+}
+#image {
+    padding-right: 30px;
+}
+.content a {
+    text-decoration: none;
+    font-family: 'Luckiest Guy', cursive;
+    text-shadow: 0 0 3px #FF0000;
+}
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  text-align: left;
+  font-size: 42px;
+}
+.active, .collapsible:hover {
+  background-color: #555;
+}
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: 900;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.note p {
+    padding-top: 30px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+}
+</style>
+</head>
+<body>
+    <div class="starcture">
+        <div class="navigation">
+            <div class="left-s">
+                <div class="dropdown">
+                    <button onclick="CFunction()" class="dropbtn"> HOME </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="index.html"> HOME</a>
+                        <a href="codes.html"> My Codes</a>
+                        <a href="game-list.html"> My Games</a>
+                        <a href="resume.html"> My Resume</a>
+                    </div> 
+                </div>
+                <div class="about">
+                    <a href="about.html">About</a>
+                </div>
+
+
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div Class="name">MOHAMMAD SARGAZI</div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+    <div id="demotext"><h2>Game's List </h2></div>
+    <button class="collapsible">Snake</button>
+    <div class="content">
+        <a> <img  id= "image" src="Images/s.png" alt="Smiley face" width="100px" height="100px" align="left"> <a href="1snake.html"> Snake Game </a>
+
+    </div>
+    <button class="collapsible">Bubble Game</button>
+    <div class="content">
+        <a> <img  id= "image" src="Images/b.png" alt="Smiley face" width="100px" height="100px" align="left"> <a href="bubblegame.html"> Bubble Game </a></div>
+</div>    
+<div id="demotext">
+    <button class="collapsible">Geography Quiz</button>
+    <div class="content">
+        <a> <img  id= "image" src="Images/g.png" alt="Smiley face" width="100px" height="100px" align="left"> <a href="index1.html"> Geography Quiz</a>
+
+    </div> 
+    <div class="note">
+        <p> Note: A few codes in these games have been found on the internet and you can find the websites in the "Citation.text" file in my github. But all of these games have been starctured and prettey much made by myself </p>
+    </div>   
+<script>
+     function CFunction(){ // when clicks toggle between showing and hiding the dropdown
+       document.getElementById("myDropdown").classList.toggle("show");
+
+    }
+    // close the drop down when user clicks outside the box
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        let droping = document.getElementsByClassName("dropdown-content");
+        let i;
+        for(i =0; i<droping.length;i++) {
+            let opendrop = droping[i];
+            if (opendrop.classList.contains('show')) {
+                opendrop.classList.remove('show');
+            }
+        }
+    }
+}  
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+
+</script>
+
+</body>
+<footer>
+    <div class="footer">
+    <p> Midterm Project Spring 2020</p>
+    </div>
+</footer>
+</html>

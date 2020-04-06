@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume</title>
+    <link rel="stylesheet" href="resume.css">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet">
+</head> 
+<body>
+    <div class="starcture">
+        <div class="navigation">
+            <div class="left-s">
+                <div class="dropdown">
+                    <button onclick="CFunction()" class="dropbtn"> HOME </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="index.html"> HOME</a>
+                        <a href="codes.html"> My Codes</a>
+                        <a href="game-list.html"> My Games</a>
+                        <a href="resume.html"> My Resume</a>
+                    </div> 
+                </div>
+                <div class="about">
+                    <a href="about.html">About</a>
+                </div>
+
+
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div Class="name">MOHAMMAD SARGAZI</div>
+                </div>
+            </div>
+
+            </div>
+
+        </div> 
+        <img src="Images/rr.jpg" alt="contact" width="50%" height="auto" id="img1"> 
+<div class="resume">  
+        <div id="header"></div>
+    <div class="left"></div>
+    <div class="stuff">
+    <br><br>
+    <h1>Resume</h1>
+    <h2>Mohammad Sargazi</h2>
+    <hr />
+    <br>
+    <p class="head">SUMMARY OF QUALIFICATION</p>
+    <ul>
+        <li>Web Design Working With HTML,CSS,SCSS,PHP</li>
+        <li>Over 2 years of quality customer service experience working with diverse populations of people.
+            Implemented new customer service strategies successfully, increasing customer satisfaction by 7% in 4 months
+            </li>
+        <li> Assisted in the training of 5 new employees, ensuring attention to detail and comprehensive understanding of company methodology and practices </li>
+        <li> Certificated in International Computer Driving License (ICDL) </li>
+        <li> Bilingual in English and Persian</li>
+    </ul>
+    <p class="head">Skills</p>
+    <ul>
+        <li>Web Design with HTML & CSS</li>
+    </ul>
+    <p class="head">EDUCATION </p>
+    <ul>
+        <a href="www.minneapolis.edu">
+        <li> Minneapolis Community & Technical College</li>
+        </a>
+        <!--Link-->
+        <li>Dr. Hesai High school</li>
+        
+    </ul>
+    <p class="head">Experience</p>
+    <ul>
+        <li>Assisting companies with coding</li>
+        <li>Customer assistant in many different companies </li>
+    </div>
+   
+</div>
+
+<p>.</p>
+</body>
+<footer>
+    <div class="footer">
+    <p> Midterm Project Spring 2020</p>
+    </div>
+</footer> 
+<script>
+    function CFunction(){ // when clicks toggle between showing and hiding the dropdown
+       document.getElementById("myDropdown").classList.toggle("show");
+
+    }
+    // close the drop down when user clicks outside the box
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        let droping = document.getElementsByClassName("dropdown-content");
+        let i;
+        for(i =0; i<droping.length;i++) {
+            let opendrop = droping[i];
+            if (opendrop.classList.contains('show')) {
+                opendrop.classList.remove('show');
+            }
+        }
+    }
+}  
+</script>
+</html>   

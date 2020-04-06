@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="uft-8"/>
+    <title>Club Roster</title>
+    <link rel="stylesheet" href="codes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head> 
+<style>
+
+body {
+    flex-shrink: 1;
+    margin: 0px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+    grid-template-columns: 1fr; 
+}
+.left-s{
+   display: flex;
+}
+.navigation > .left-s > div {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    transition: border-bottom 0.5s;
+    color: #d32020;
+    text-decoration: none;
+    transition: color 0.5s;
+    text-decoration: none;
+    display: block;
+}
+.dropbtn {
+    background-color: white;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+  }
+  .dropbtn:hover{
+    padding-bottom: 22px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+    transition: color 0.5s;
+    color: rgb(0, 0, 0);
+  }
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #fdf4f4;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+ }
+ .dropdown-content:hover {
+    border-bottom: 1px solid black;
+ }
+ .dropdown-content a{
+    color: #4e4242;
+    text-decoration: none;
+    transition: color 0.5s;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+ }
+ .dropdown-content a:hover {
+    color: black;
+ }
+ .show {display:block;}
+ 
+.about{
+    text-decoration: none;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+
+}
+
+.about a{
+    text-decoration: none;
+    transition: color 0.5s;
+}
+.about:hover a{
+    padding-bottom: 8px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+}
+textarea {
+    background-color: rgb(122, 122, 124);
+    font-size: 25px;
+    text-align: left;
+    margin: 0;
+}
+#demotext {
+color: #FFFFFF;
+background: #333333;
+text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+color: rgb(71, 69, 69);
+background: #ffffff;
+text-align: center
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-align: center;
+    
+}
+</style>
+<body>
+    <div class="starcture">
+        <div class="navigation">
+            <div class="left-s">
+                <div class="dropdown">
+                    <button onclick="CFunction()" class="dropbtn"> HOME </button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="index.html"> HOME</a>
+                        <a href="codes.html"> My Codes</a>
+                        <a href="game-list.html"> My Games</a>
+                        <a href="resume.html"> My Resume</a>
+                    </div> 
+                </div>
+                <div class="about">
+                    <a href="about.html">About</a>
+                </div>
+
+
+            </div>
+            <div class="right-side">
+                <div class="brand">
+                    <div Class="name">MOHAMMAD SARGAZI</div>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        <div id="demotext"><h2> Student Club Roster </h2></div>
+    <textarea id="w3mission" rows="20" cols="80">
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <title>Club Membership</title>
+        
+          <style>
+              
+              .selected {
+                text-decoration: line-through ;
+                font-style: italic;
+                color: gray;
+              }
+        
+              input {
+                  width: 100%;
+                  padding: 5px;
+                  margin: 5px 5px 5px 0px;
+                  box-sizing: border-box;
+        
+              }
+        
+          </style>
+        
+        </head>
+        <body>
+        
+            <h1>Student Club Roster</h1>
+        
+            <h2>Add Students</h2>
+        
+            <label for="student-name">Student Name</label><input id="student-name" name="student-name">
+            <br>
+            <label for="student-id">Student ID</label><input id="student-id" name="student-id">
+            <br>
+            <label for="student-gpa">Student GPA</label><input id="student-gpa" name="student-gpa" type="number">
+            <br>
+            <button id="add-student">Add Student</button>    
+        
+            <h2>Student List</h2>
+        
+            <p>There are 
+                <span id="student-count">            
+                  <!-- use JavaScript to count the number of students, and show here --> 
+                </span> 
+            student(s) in the club.</p>
+            
+        
+            <ul id="student-list">
+                <!-- use JavaScript to create li elements  -->
+            </ul>
+        
+            <button id="remove-selected-students">Remove selected students</button>
+        
+        <script>
+        
+        
+        let addbuttonEl = document.querySelector("#add-student")
+        let studentnameEl = document.querySelector("#student-name")
+        let studentidEl = document.querySelector("#student-id")
+        let studentGpaEl = document.querySelector("#student-gpa")
+        let studentCountEl = document.querySelector("span#student-count")
+        let removebuttonE1 = document.querySelector("#remove-selected-students")
+        let studentlistE1 = document.querySelector("#student-list")
+        
+        
+        let counter = 0 
+        studentCountEl.innerHTML = counter //innerHTML replaces/read the content 
+        
+        document.addEventListener('keyup', function() {
+            console.log(event)
+            if (event.keyCode === 13) { // enter key has keyCode 13
+            addItem() // call addItem function
+            }
+            })
+        
+        addbuttonEl.addEventListener('click', function() {
+           addItem()
+        }) 
+        function addItem() {
+        
+        let studentName = studentnameEl.value //Read value from input
+        
+        let studentID = studentidEl.value //Read value from input
+        let studentGpa = studentGpaEl.value //Read value from input
+        if (studentName.length < 1){
+            alert('Student naqame cannot be blank' )
+        }
+        else if (studentID.length < 1){
+            alert('Enter your student ID')
+        }
+        else if (studentGpa.length < 1 || studentGpa < 0  || studentGpa > 4) {
+            alert('Invalid GPA')
+            return
+        }
+        else {
+        
+        let NewLiEl = document.createElement('li')
+        NewLiEl.id="list"
+        NewLiEl.innerHTML = `${studentName}  , ID: ${studentID} , GPA:  ${studentGpa}`
+        NewLiEl.addEventListener('click', function() {
+            this.classList.toggle('selected')
+            
+        })
+        
+        studentnameEl.value=''
+        studentidEl.value=''
+        studentGpaEl.value=''
+        studentlistE1.appendChild(NewLiEl)
+         
+            counter+=1
+            studentCountEl.innerHTML = counter
+        } 
+        }
+        
+        removebuttonE1.addEventListener('click', function() {
+        
+            var selecteditem = document.getElementsByClassName('selected') 
+            for (var i = selecteditem.length-1; i>=0; i--){
+                selecteditem[i].parentNode.removeChild(selecteditem[i])
+                counter -= 1 
+                studentCountEl.innerHTML = counter
+              
+        
+             
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+        })
+        
+        </script>
+        
+        </body>
+        </html>
+        
+        </textarea>
+    </div>
+</body> 
+<footer>
+    <div class="footer">
+    <p> Midterm Project Spring 2020</p>
+    </div>
+</footer>
+<script>
+    function CFunction(){ // when clicks toggle between showing and hiding the dropdown
+       document.getElementById("myDropdown").classList.toggle("show");
+
+    }
+    // close the drop down when user clicks outside the box
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        let droping = document.getElementsByClassName("dropdown-content");
+        let i;
+        for(i =0; i<droping.length;i++) {
+            let opendrop = droping[i];
+            if (opendrop.classList.contains('show')) {
+                opendrop.classList.remove('show');
+            }
+        }
+    }
+}  
+</script>
+</html>   

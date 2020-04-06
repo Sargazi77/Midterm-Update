@@ -1,0 +1,134 @@
+body {
+    margin: 0px;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+    grid-template-columns: 1fr; 
+}
+.left-s{
+   display: flex;
+}
+.navigation > .left-s > div {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    transition: border-bottom 0.5s;
+    color: #d32020;
+    text-decoration: none;
+    transition: color 0.5s;
+    text-decoration: none;
+    display: block;
+}
+.dropbtn {
+    background-color: white;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+  }
+  .dropbtn:hover{
+    padding-bottom: 22px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+    transition: color 0.5s;
+    color: rgb(0, 0, 0);
+  }
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  #fdf4f4;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+ }
+ .dropdown-content:hover {
+    border-bottom: 1px solid black;
+ }
+ .dropdown-content a{
+    color: #4e4242;
+    text-decoration: none;
+    transition: color 0.5s;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+ }
+ .dropdown-content a:hover {
+    color: black;
+ }
+ .show {display:block;}
+ 
+.about{
+    text-decoration: none;
+    color: #7e7675;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    height: 22px;
+    transition: border-bottom 0.5s;
+
+}
+
+.about a{
+    text-decoration: none;
+    transition: color 0.5s;
+}
+.about:hover a{
+    padding-bottom: 8px;
+    border-bottom: 5px solid rgb(218, 16, 16);
+}
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  padding-left: 38px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding-left: 38px;
+}
+h2 {
+    padding-left: 38px;
+}
+.Allcol a {
+    text-decoration: none;
+    color: #444444;
+    background: #FFFFFF;
+    text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+    color: #444444;
+    background: #FFFFFF;
+    line-height: 2;
+    
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    text-align: center;
+    
+}
